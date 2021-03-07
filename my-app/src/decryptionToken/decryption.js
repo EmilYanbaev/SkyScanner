@@ -2,12 +2,10 @@
 //Так что остановимся на таклм простом шифровании по ключу :)
 //Не обращаем внимание на сложность o(2n)
 
-export let getDecryptionToken = (key)=>{
+export let getDecryptionToken = (key,token)=>{
     String.prototype.replaceAt = function (index, replacement) {
         return this.substr(0, index) + replacement + this.substr(index + replacement.length);
     }
-
-    let token = "ikgdhÚjgjgmfn°ghfgÛeidl"
 
     while(key.length != token.length)
     {

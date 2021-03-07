@@ -1,0 +1,32 @@
+.page{
+    width: 100vw;
+    height: 100vh;
+    background: #fff url('../../../assets/Rectangle.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:5px
+}
+
+.page__form{
+    flex-basis: 410px;
+    min-height: 338px;
+    padding-top:53px;
+    padding-bottom: 37px;
+    background:#fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+.page__title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 16px;
+}

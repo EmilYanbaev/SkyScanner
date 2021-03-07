@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/SkyScanner/static/css/main.11d086d5.chunk.css",
-    "main.js": "/SkyScanner/static/js/main.b33932a2.chunk.js",
-    "main.js.map": "/SkyScanner/static/js/main.b33932a2.chunk.js.map",
+    "main.js": "/SkyScanner/static/js/main.2d72c118.chunk.js",
+    "main.js.map": "/SkyScanner/static/js/main.2d72c118.chunk.js.map",
     "runtime-main.js": "/SkyScanner/static/js/runtime-main.5d194677.js",
     "runtime-main.js.map": "/SkyScanner/static/js/runtime-main.5d194677.js.map",
     "static/js/2.6294c719.chunk.js": "/SkyScanner/static/js/2.6294c719.chunk.js",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.5d194677.js",
     "static/js/2.6294c719.chunk.js",
     "static/css/main.11d086d5.chunk.css",
-    "static/js/main.b33932a2.chunk.js"
+    "static/js/main.2d72c118.chunk.js"
   ]
 }

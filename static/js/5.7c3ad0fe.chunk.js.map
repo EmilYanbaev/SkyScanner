@@ -1,0 +1,1 @@
+{"version":3,"sources":["Component/SearchPage/SearchContainer.jsx"],"names":["SearchContainer"],"mappings":"0HASeA,UARO,WAClB,OACI","file":"static/js/5.7c3ad0fe.chunk.js","sourcesContent":["\r\nlet SearchContainer = ()=>{\r\n    return (\r\n        <div>\r\n            search\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default SearchContainer"],"sourceRoot":""}

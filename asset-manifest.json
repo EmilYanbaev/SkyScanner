@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/SkyScanner/static/css/main.11d086d5.chunk.css",
+    "main.js": "/SkyScanner/static/js/main.b33932a2.chunk.js",
+    "main.js.map": "/SkyScanner/static/js/main.b33932a2.chunk.js.map",
+    "runtime-main.js": "/SkyScanner/static/js/runtime-main.5d194677.js",
+    "runtime-main.js.map": "/SkyScanner/static/js/runtime-main.5d194677.js.map",
+    "static/js/2.6294c719.chunk.js": "/SkyScanner/static/js/2.6294c719.chunk.js",
+    "static/js/2.6294c719.chunk.js.map": "/SkyScanner/static/js/2.6294c719.chunk.js.map",
+    "static/js/3.2899174d.chunk.js": "/SkyScanner/static/js/3.2899174d.chunk.js",
+    "static/js/3.2899174d.chunk.js.map": "/SkyScanner/static/js/3.2899174d.chunk.js.map",
+    "static/css/4.67f08246.chunk.css": "/SkyScanner/static/css/4.67f08246.chunk.css",
+    "static/js/4.4bc56e4e.chunk.js": "/SkyScanner/static/js/4.4bc56e4e.chunk.js",
+    "static/js/4.4bc56e4e.chunk.js.map": "/SkyScanner/static/js/4.4bc56e4e.chunk.js.map",
+    "static/js/5.7c3ad0fe.chunk.js": "/SkyScanner/static/js/5.7c3ad0fe.chunk.js",
+    "static/js/5.7c3ad0fe.chunk.js.map": "/SkyScanner/static/js/5.7c3ad0fe.chunk.js.map",
+    "static/js/6.843f6e2b.chunk.js": "/SkyScanner/static/js/6.843f6e2b.chunk.js",
+    "static/js/6.843f6e2b.chunk.js.map": "/SkyScanner/static/js/6.843f6e2b.chunk.js.map",
+    "index.html": "/SkyScanner/index.html",
+    "static/css/4.67f08246.chunk.css.map": "/SkyScanner/static/css/4.67f08246.chunk.css.map",
+    "static/css/main.11d086d5.chunk.css.map": "/SkyScanner/static/css/main.11d086d5.chunk.css.map",
+    "static/js/2.6294c719.chunk.js.LICENSE.txt": "/SkyScanner/static/js/2.6294c719.chunk.js.LICENSE.txt",
+    "static/media/LoginPage.module.css": "/SkyScanner/static/media/Rectangle.47877d03.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5d194677.js",
+    "static/js/2.6294c719.chunk.js",
+    "static/css/main.11d086d5.chunk.css",
+    "static/js/main.b33932a2.chunk.js"
+  ]
+}

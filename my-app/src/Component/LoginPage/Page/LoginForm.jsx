@@ -10,7 +10,7 @@ let LoginForm = ({ handleSubmit, error }) => {
             <Field name="login" component={FormItem} title="Логин:" type="text" validate={[required, isValidEmail]} />
             <Field name="pass" component={FormItem} title="Пароль:" type="password" validate={[required,isValidValuePass,minLength]} />
 
-            {error && <div className = {style.warning} >{error}</div>}
+            {error && <div className = {style.error} >{error}</div>}
             <div className={style.form_group__btnWrap}>
                 <Button type="Submit">Войти</Button>
             </div>

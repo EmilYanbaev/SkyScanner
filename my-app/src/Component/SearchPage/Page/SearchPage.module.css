@@ -1,0 +1,63 @@
+.page{
+    /* width: 100vw; */
+    min-height: 100vh;
+    padding: 25px;
+    padding-bottom: 60px;
+    background-color: #F3F4F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.logOut{
+    flex-basis: 5%;
+    align-self: flex-end;
+    margin-bottom: 15px;
+}
+
+.logOut__btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background-color:transparent
+
+}
+
+.logOut__text{
+    height: 100%;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 22px;
+    color: #1157A7;
+
+    margin-right: 20px;
+}
+
+.wrappIcon{
+    height: 100%;
+}
+
+.main{
+    width: 100%;
+    flex-basis: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+@media(max-width:1024px)
+{
+    .main{
+        flex-direction: column;
+    }
+}
+
+
+

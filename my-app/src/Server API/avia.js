@@ -11,5 +11,10 @@ export const aviaApi = {
                 return error.response.data
             }
         }
+    },
+
+    async getTickets(token) {
+        const response = await axios.get(`https://intense-caverns-46819.herokuapp.com/http://api.travelpayouts.com/v2/prices/latest?currency=rub&origin=LED&destination=UFA&beginning_of_period=2021-03-01&period_type=month&one_way=true&page=1&limit=1000&show_to_affiliates=true&sorting=price&token=${token}`)
+        return response.data
     }
 }

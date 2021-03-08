@@ -1,10 +1,9 @@
+import SearchPage from "./Page/SearchPage"
 
-let SearchContainer = ()=>{
-    return (
-        <div>
-            search
-        </div>
-    )
+let SearchContainer = () => {
+    return (<>
+        <SearchPage />
+    </>)
 }
 
 export default SearchContainer

@@ -1,7 +1,8 @@
 export const SET_TICKETS = "tickets/SET_TICKET"
 
 const initialState = {
-    data:[]
+    data:[],
+    basket:0
 }
 
 const ticketsReducer = (state=initialState,action) =>{

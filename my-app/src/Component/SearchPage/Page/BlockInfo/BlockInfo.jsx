@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 import { CalendarSvg } from "../../../common/CalendarSvg"
 import { IconPlaneSvg } from "../../../common/IconPlaneSvg"
 import { ArrowSvg } from "../../../common/ArrowSvg"
@@ -7,6 +9,9 @@ import { LineSvg } from "../../../common/LineSvg"
 import { Heart } from "../../../common/Heart"
 
 let BlockInfo = (props) => {
+    debugger;
+    let ticketJSX = props.tickets.map(el => <Ticket ticket={el} originName={props.departureData.origin.name} destinationName={props.departureData.destination.name} />)
+
     return (
         <div className={style.infoBlock}>
 
@@ -14,21 +19,9 @@ let BlockInfo = (props) => {
                 <DepartureInfo />
                 <Slaider />
             </div>
-            <div className={style.basket}>
-                    <p>
-                        Добавленно в Избранное:
-                        <span className={style.span}>10</span>
-                        рейсов
-                    </p>
-                </div>
+            <Basket />
             <div className={style.tickets}>
-                
-                <Ticket />
-                <Ticket />
-                <Ticket />
-                <Ticket />
-                <Ticket />
-                <Ticket />
+                {ticketJSX}
             </div>
         </div>
     )
@@ -67,35 +60,48 @@ let DepartureInfo = () => {
     )
 }
 
+let Basket = (props) => {
+    return (
+        <div className={style.basket}>
+            <p>
+                Добавленно в Избранное:
+                        <span className={style.span}>10</span>
+                        рейсов
+                    </p>
+        </div>
+    )
+}
 
 let Ticket = (props) => {
+    let dataForm = moment(props.ticket.depart_date).format('DD MMMM, YYYY')
     return (
         <div className={style.ticket}>
             <div className={style.ticket__icon}>
                 <IconPlaneSvg />
             </div>
             <div className={style.ticket__info}>
+
                 <div className={style.ticket__city}>
-                    MOSCOW (SVO)
+                    {props.originName} ({props.ticket.origin})
                         <div className={style.arrow}><ArrowSvg /></div>
-                        New York City(JFK)
-                        </div>
+                    {props.destinationName} ({props.ticket.destination})
+                </div>
 
                 <div className={style.ticket__data}>
-                    28 June, 2020
+                    {dataForm}
                         <div className={style.arrow}><LineSvg /></div>
                         14:50
-                        </div>
+                </div>
                 <div className={style.ticket__data}>
-                    Aeroflot
-                        </div>
+                    {props.ticket.gate}
+                </div>
             </div>
 
             <div className={style.ticket__control}>
                 <Heart fill={false} />
                 <div className={style.ticketPrice}>
                     <div className={style.ticketPrice__title}>Price:</div>
-                    <div className={style.ticketPrice__value}>23 924 Р</div>
+                    <div className={style.ticketPrice__value}>{props.ticket.value} ₽</div>
                 </div>
             </div>
 

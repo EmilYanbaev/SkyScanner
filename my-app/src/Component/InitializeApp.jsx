@@ -8,7 +8,7 @@ let InitializeApp = (props) => {
         if (sessionStorage.getItem("token")) {
             props.isAuthorized(sessionStorage.getItem("token"));
         }
-    }, [])
+    }, [props.isLogin])
     return (
         <>
             <ViewContentControl />
@@ -16,5 +16,8 @@ let InitializeApp = (props) => {
     )
 }
 
+const mapStateToProps = (state)=>({
+    isLogin:state.auth.isLogin
+})
 
-export default connect(null, { isAuthorized: signSuccess })(InitializeApp)
+export default connect(mapStateToProps, { isAuthorized: signSuccess })(InitializeApp)

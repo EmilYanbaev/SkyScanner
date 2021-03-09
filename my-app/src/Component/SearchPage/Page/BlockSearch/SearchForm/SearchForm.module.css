@@ -1,0 +1,156 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+@media(max-width:1024px)
+{
+    .form{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media(max-width:550px)
+{
+    .form{
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+
+
+.formItem{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 15px;
+}
+
+.formItem__title{
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    color: #424242;
+
+    margin-bottom: 5px;
+}
+
+.formItem__input{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border:none;
+    border:1px solid rgba(135, 135, 135, 0.5);
+
+    outline: none;
+}
+
+
+
+
+
+
+
+
+.formItemHelp{
+    position:absolute;
+    top:100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.formItemHelp__btn{
+
+    width: 100%;
+    padding: 5px;
+
+    font-family: 'Roboto';
+
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 22px;
+    color: #424242;
+    text-align: start;
+
+    outline: none;
+
+    background-color: #fff;
+    border:none;
+    border-bottom: 1px solid rgba(135, 135, 135, 0.2);
+    z-index: 2000;
+}
+
+.formItemHelp__btn:last-child{
+    border-radius: 5px;
+}
+
+.formItemHelp__btn:hover{
+    background-color: rgb(243, 244, 245);
+}
+
+
+.calendar{
+    min-width: 250px;
+    margin-bottom: 15px;
+}
+.calendar__title{
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    color: #424242;
+
+    margin-bottom: 5px;
+}
+
+.calendarWrapp{
+    max-height: 100px;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.calendarWrapp::-webkit-scrollbar {
+    width: 2px;
+    background-color: #f9f9fd;
+}
+  
+.calendarWrapp::-webkit-scrollbar-thumb {
+    background: #1157A7;
+    border-radius: 2px;
+}
+  
+.calendarWrapp::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    background: #E7E7E7;
+    border-radius: 2px;
+}
+
+
+
+.calendar__item{
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 22px;
+    color: #424242;
+    text-align: start;
+    padding: 5px;
+
+    border-bottom: 1px solid rgba(135, 135, 135, 0.2);
+
+    cursor: pointer;
+}
+
+.calendar__item:hover{
+    background-color: rgb(243, 244, 245);
+}

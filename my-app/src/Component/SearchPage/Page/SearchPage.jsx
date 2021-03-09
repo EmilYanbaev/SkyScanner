@@ -1,5 +1,5 @@
 import { LogOutSvg } from '../../common/LogOutSvg'
-import BlockInfo from './BlockInfo/BlockInfo'
+import BlockInfoContainer from './BlockInfo/BlockInfoContainer'
 import BlockSearch from './BlockSearch/BlockSearch'
 import style from './SearchPage.module.css'
 
@@ -16,7 +16,7 @@ let SearchPage = (props) => {
             </div>
             <div className={style.main}>
                 <BlockSearch />
-                <BlockInfo />
+                <BlockInfoContainer />
             </div>
         </div>
 

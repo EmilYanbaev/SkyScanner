@@ -3,6 +3,7 @@ import { reducer as formReducer } from 'redux-form'
 import createSagaMiddleWare from "redux-saga"
 import authReducer from "./reducers/authReducer";
 import searchReducer from "./reducers/searchReducer";
+import ticketsReducer from "./reducers/ticketsReducer";
 import {sagaWatcher } from "./sagas";
 
 const saga = createSagaMiddleWare();
@@ -11,6 +12,7 @@ const reducers = combineReducers(
     {
         auth: authReducer,
         search:searchReducer,
+        tickets:ticketsReducer,
         form: formReducer
     }
 )

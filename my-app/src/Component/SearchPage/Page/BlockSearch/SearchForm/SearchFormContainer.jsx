@@ -113,7 +113,7 @@ const FormCalendar = (props) => {
     let monthsJSX = months.map((el, index) => <button className={style.calendar__item} onClick={handleClick} id={el.number} key={index} type="button">{el.name}</button>)
     return (
         <div className={style.calendar}>
-            <p className={style.calendar__title}>Месяц:{months[props.month - 1].name}</p>
+            <p className={style.calendar__title}>Месяц:{months[props.month-1].name}</p>
             <div className={style.calendarWrapp}>
                 {monthsJSX}
             </div>

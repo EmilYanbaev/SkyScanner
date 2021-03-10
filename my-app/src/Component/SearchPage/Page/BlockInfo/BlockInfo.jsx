@@ -1,33 +1,36 @@
-import moment from 'moment'
-
+import { deepEqual } from "../../../../utils/deepEqual"
 import { CalendarSvg } from "../../../common/CalendarSvg"
-import { IconPlaneSvg } from "../../../common/IconPlaneSvg"
-import { ArrowSvg } from "../../../common/ArrowSvg"
+import Basket from "./Basket"
 import style from "./BlockInfo.module.css"
 import Slaider from "./Slaider"
-import { LineSvg } from "../../../common/LineSvg"
-import { Heart } from "../../../common/Heart"
+
+import Ticket from "./Ticket"
+
 
 let BlockInfo = (props) => {
-    debugger;
-    let ticketJSX = props.tickets.map(el => <Ticket ticket={el} originName={props.departureData.origin.name} destinationName={props.departureData.destination.name} />)
+    let ticketJSX = props.tickets.map(
+        (el, index) => {
+
+            let isLike = props.ticketsLike.some(t => deepEqual(el,t))
+            return <Ticket ticket={el} originName={props.departureData.origin.name} destinationName={props.departureData.destination.name} onLike={props.onLike} isLike={isLike} key={index} />
+        })
 
     return (
         <div className={style.infoBlock}>
 
             <div className={style.infoBlock__header}>
-                <DepartureInfo />
+                <DepartureInfo departureData={props.departureData} />
                 <Slaider />
             </div>
-            <Basket />
+            <Basket count={props.basketCount} />
             <div className={style.tickets}>
-                {ticketJSX}
+                {props.viewTickets && ticketJSX}
             </div>
         </div>
     )
 }
 
-let DepartureInfo = () => {
+let DepartureInfo = (props) => {
     return (
 
         <div className={style.departure}>
@@ -42,15 +45,15 @@ let DepartureInfo = () => {
                         <path d="M1 1L9.66667 9.66667L1 18.3333" stroke="#A7A7A7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </div>
-                <div className={style.departureInfo__item}>
-                    SVO - JFK
-        </div>
+                {props.departureData && <div className={style.departureInfo__item}>
+                    {props.departureData.origin.iata} - {props.departureData.destination.iata}
+                </div>}
             </div>
 
             <div className={style.departureData}>
-                <div className={style.departureData__text}>
-                    07 июля 2020
-        </div>
+                {props.departureData && <div className={style.departureData__text}>
+                    {props.departureData.month.name} 2021
+                </div>}
                 <div className={style.departureData__icon}>
                     <CalendarSvg />
                 </div>
@@ -60,53 +63,7 @@ let DepartureInfo = () => {
     )
 }
 
-let Basket = (props) => {
-    return (
-        <div className={style.basket}>
-            <p>
-                Добавленно в Избранное:
-                        <span className={style.span}>10</span>
-                        рейсов
-                    </p>
-        </div>
-    )
-}
 
-let Ticket = (props) => {
-    let dataForm = moment(props.ticket.depart_date).format('DD MMMM, YYYY')
-    return (
-        <div className={style.ticket}>
-            <div className={style.ticket__icon}>
-                <IconPlaneSvg />
-            </div>
-            <div className={style.ticket__info}>
 
-                <div className={style.ticket__city}>
-                    {props.originName} ({props.ticket.origin})
-                        <div className={style.arrow}><ArrowSvg /></div>
-                    {props.destinationName} ({props.ticket.destination})
-                </div>
-
-                <div className={style.ticket__data}>
-                    {dataForm}
-                        <div className={style.arrow}><LineSvg /></div>
-                        14:50
-                </div>
-                <div className={style.ticket__data}>
-                    {props.ticket.gate}
-                </div>
-            </div>
-
-            <div className={style.ticket__control}>
-                <Heart fill={false} />
-                <div className={style.ticketPrice}>
-                    <div className={style.ticketPrice__title}>Price:</div>
-                    <div className={style.ticketPrice__value}>{props.ticket.value} ₽</div>
-                </div>
-            </div>
-
-        </div>
-    )
-}
 
 export default BlockInfo

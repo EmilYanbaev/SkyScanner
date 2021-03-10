@@ -1,16 +1,30 @@
 import { connect } from "react-redux"
-import { getDepartureData } from "../../../../selectors/getDataSearchSelector"
+import { setLike } from "../../../../redux/reducers/ticketsReducer"
 import BlockInfo from "./BlockInfo"
 
-const BlockInfoContainer = (props)=>{
+const BlockInfoContainer = (props) => {
+
+    let handleLike=(ticket)=>{
+        props.setLike(ticket,true)
+    }
 
     return (<>
-        <BlockInfo departureData = {props.departureData} tickets = {props.tickets}/>
-        </>
+        <BlockInfo 
+        departureData={props.departureData}
+        tickets={props.tickets}
+        viewTickets={props.viewTickets}
+        basketCount={props.basketCount}
+        ticketsLike={props.ticketsLike}
+        onLike = {handleLike}
+        />
+    </>
     )
 }
-const mapStateToProps = (state)=>({
-    tickets:state.tickets.data,
-    departureData:getDepartureData(state)
+const mapStateToProps = (state) => ({
+    tickets: state.tickets.data,
+    departureData: state.tickets.dataDeparture,
+    basketCount: state.tickets.basketCount,
+    viewTickets: state.tickets.setTicketsSuccess,
+    ticketsLike:state.tickets.ticketsLike
 })
-export default connect(mapStateToProps,{})(BlockInfoContainer)
+export default connect(mapStateToProps, {setLike:setLike})(BlockInfoContainer)

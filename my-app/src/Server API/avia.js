@@ -23,12 +23,12 @@ export const aviaApi = {
     },
 
     async getAutoComplit(value){
-        const response = await axios.get(`${PROXY}http://autocomplete.travelpayouts.com/places2?term=${value}&locale=ru&types[]=city,airport,country`)
+        const response = await axios.get(`${PROXY}http://autocomplete.travelpayouts.com/places2?term=${value}&locale=ru&types[]=city`)
         return response.data.slice(0,5);
     },
 
-    async getIataCode(origin,destination){
-        const response = await axios.get(`${PROXY}https://www.travelpayouts.com/widgets_suggest_params?q=Из%20${origin}%20в%20${destination}`)
-        return response.data
+    async getIataCode(term){
+        const response = await axios.get(`${PROXY}http://autocomplete.travelpayouts.com/places2?term=${term}&locale=ru`)
+        return response.data[0]
     }
 }

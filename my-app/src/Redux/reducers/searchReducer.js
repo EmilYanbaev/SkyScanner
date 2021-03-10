@@ -8,12 +8,12 @@ export const SET_IATA = "search/SET_IATA"
 
 const initialState = {
     originInput: "", //id инпута  = 1
-    originIata: "",
+    // originIata: "",
     originHelp: [],
     hiddenOriginHelp: false,
 
     destinationInput: "", //id инпута  = 2
-    destinationIata: "",
+    // destinationIata: "",
     destinationHelp: [],
     hiddenDestinationHelp: false,
 
@@ -37,8 +37,8 @@ let searchReducer = (state = initialState, action) => {
             return (action.id == 1) ? { ...state, hiddenOriginHelp: action.isHidden } : { ...state, hiddenDestinationHelp: action.isHidden }
         case SET_MONTH:
             return { ...state, month: action.number }
-        case SET_IATA:
-            return { ...state, originIata: action.originIata, destinationIata: action.destinationIata }
+        // case SET_IATA:
+        //     return { ...state, originIata: action.originIata, destinationIata: action.destinationIata }
         default:
             return state;
     }
@@ -50,4 +50,4 @@ export const clearInputHelp = (id) => ({ type: CLEAR_INPUT_HELP, id })
 export const setHelpInpuit = (data, id) => ({ type: SET_HELP_INPUT, data, id })
 export const setHiddenHelp = (id, isHidden) => ({ type: SET_HIDDEN_HELP, id, isHidden })
 export const setMonth = (number) => ({ type: SET_MONTH, number })
-export const setIataCode = (originIata, destinationIata) => ({ type: SET_IATA, originIata, destinationIata })
+// export const setIataCode = (originIata, destinationIata) => ({ type: SET_IATA, originIata, destinationIata })

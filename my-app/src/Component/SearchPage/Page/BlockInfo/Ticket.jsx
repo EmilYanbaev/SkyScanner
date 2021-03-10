@@ -11,10 +11,8 @@ import { Like } from "./Like"
 
 let Ticket = (props) => {
 
-    console.log(props.isLike)
-
     let handleLike = () => {
-        props.onLike(props.ticket)
+        props.onLike(props.ticket,!props.isLike)
     }
 
     let dataForm = moment(props.ticket.depart_date).format('DD MMMM, YYYY')

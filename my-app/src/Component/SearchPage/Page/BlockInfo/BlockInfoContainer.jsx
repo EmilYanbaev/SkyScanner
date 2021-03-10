@@ -4,8 +4,8 @@ import BlockInfo from "./BlockInfo"
 
 const BlockInfoContainer = (props) => {
 
-    let handleLike=(ticket)=>{
-        props.setLike(ticket,true)
+    let handleLike=(ticket,isLike)=>{
+        props.setLike(ticket,isLike)
     }
 
     return (<>

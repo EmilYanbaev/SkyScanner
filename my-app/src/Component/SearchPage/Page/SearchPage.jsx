@@ -1,4 +1,5 @@
 import { LogOutSvg } from '../../common/LogOutSvg'
+import Basket from './BlockBasket/BlockBasket'
 import BlockInfoContainer from './BlockInfo/BlockInfoContainer'
 import BlockSearch from './BlockSearch/BlockSearch'
 import style from './SearchPage.module.css'
@@ -7,7 +8,7 @@ let SearchPage = (props) => {
     return (
         <div className={style.page}>
             <div className={style.logOut}>
-                <button className={style.logOut__btn}>
+                <button className={style.logOut__btn} onClick={props.logOut}>
                     <p className={style.logOut__text}>Выйти</p>
                     <div className={style.wrappIcon} >
                         <LogOutSvg />
@@ -15,9 +16,14 @@ let SearchPage = (props) => {
                 </button>
             </div>
             <div className={style.main}>
-                <BlockSearch />
+                <div className = {style.wrapp}>
+                    <BlockSearch />
+                    <Basket />
+                </div>
                 <BlockInfoContainer />
+
             </div>
+
         </div>
 
 

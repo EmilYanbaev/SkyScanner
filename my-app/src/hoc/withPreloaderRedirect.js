@@ -7,7 +7,6 @@ export const withPreloadRedirect = (Component) => {
     class PreloadRedirectContainer extends React.Component {
         render() {
             let path
-
             if (this.props.isLogin)
                 if (this.props.location.pathname === "/login" || this.props.location.pathname === "/" || this.props.location.pathname === "/SkyScanner")
                     path = "/search"

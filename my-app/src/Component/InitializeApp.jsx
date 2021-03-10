@@ -5,10 +5,16 @@ import ViewContentControl from "./ViewContentControl"
 
 let InitializeApp = (props) => {
     useEffect(() => {
+        if(!props.isLogin && props.token){
+            debugger;
+            sessionStorage.clear()
+        }
         if (sessionStorage.getItem("token")) {
             props.isAuthorized(sessionStorage.getItem("token"));
         }
+        // return () => { sessionStorage.clear() };
     }, [props.isLogin])
+
     return (
         <>
             <ViewContentControl />
@@ -16,8 +22,9 @@ let InitializeApp = (props) => {
     )
 }
 
-const mapStateToProps = (state)=>({
-    isLogin:state.auth.isLogin
+const mapStateToProps = (state) => ({
+    isLogin: state.auth.isLogin,
+    token:state.auth.token
 })
 
 export default connect(mapStateToProps, { isAuthorized: signSuccess })(InitializeApp)

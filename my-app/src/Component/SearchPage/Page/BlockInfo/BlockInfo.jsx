@@ -24,8 +24,10 @@ let BlockInfo = (props) => {
             </div>
             <Basket count={props.basketCount} />
             <div className={style.tickets}>
-                {props.viewTickets && ticketJSX}
+                {props.viewTickets && ticketJSX }
+                {/* {props.viewTickets && <button style = {style.tickets__btnGetTickets}>Get tickets</button>} */}
             </div>
+            
         </div>
     )
 }
@@ -38,7 +40,7 @@ let DepartureInfo = (props) => {
             <div className={style.departureInfo}>
 
                 <div className={style.departureInfo__item}>
-                    ВЫЛЕТЫ
+                    Вылеты
             </div>
                 <div className={style.departureInfo__item}>
                     <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">

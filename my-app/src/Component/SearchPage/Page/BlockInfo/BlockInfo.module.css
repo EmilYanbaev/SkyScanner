@@ -112,7 +112,7 @@
     border-bottom: 1px solid rgba(135, 135, 135, 0.2);
 }
 
-.ticket:last-child{
+.ticket:nth-last-child(2){
     border-bottom: none;
 }
 
@@ -176,6 +176,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 }
 
 
@@ -194,6 +196,14 @@
     font-size: 17px;
     line-height: 22px;
 }
+
+
+.tickets__btnGetTickets{
+    border: none;
+    background: none;
+}
+
+
 
 @media (max-width:600px){
     .ticket{

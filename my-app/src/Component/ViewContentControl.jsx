@@ -6,7 +6,8 @@ import { Preloader } from "./common/Preloader"
 
 const LoginContainer = React.lazy(() => import("./LoginPage/LoginContainer"))
 const SearchContainer = React.lazy(()=> import("./SearchPage/SearchContainer"))
-let ViewContentControl = (props) => {
+
+const ViewContentControl = (props) => {
     return (
         <Suspense fallback={<Preloader/>} >
             <Switch>

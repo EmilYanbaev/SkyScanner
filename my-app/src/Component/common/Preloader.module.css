@@ -5,15 +5,14 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    
 }
 
 .preloader{
-    width: 10%;
+    width: 30px;
 }
 
-@media (max-width: 1300px) {
+/* @media (max-width: 1300px) {
     .preloader {
         width: 50%;
     }
-}
+} */

@@ -17,8 +17,9 @@ export const aviaApi = {
         }
     },
 
-    async getTickets(origin,destination,month,token) {
-        const response = await axios.get(`${PROXY}http://api.travelpayouts.com/v2/prices/latest?currency=rub&origin=${origin}&destination=${destination}&beginning_of_period=2021-${month}-01&period_type=month&one_way=true&page=1&limit=10&show_to_affiliates=true&sorting=price&token=${token}`)
+    async getTickets(origin,destination,month,token,page) {
+        debugger;
+        const response = await axios.get(`${PROXY}http://api.travelpayouts.com/v2/prices/latest?currency=rub&origin=${origin}&destination=${destination}&beginning_of_period=2021-${month}-01&period_type=month&one_way=true&page=${page}&limit=10&show_to_affiliates=true&sorting=price&token=${token}`)
         return response.data
     },
 

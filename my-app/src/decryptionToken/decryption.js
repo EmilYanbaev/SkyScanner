@@ -3,11 +3,12 @@
 //Не обращаем внимание на сложность o(2n)
 
 export let getDecryptionToken = (key,token)=>{
+    
     String.prototype.replaceAt = function (index, replacement) {
         return this.substr(0, index) + replacement + this.substr(index + replacement.length);
     }
 
-    while(key.length != token.length)
+    while(key.length !== token.length)
     {
         if(key.length<token.length)
         key += key;

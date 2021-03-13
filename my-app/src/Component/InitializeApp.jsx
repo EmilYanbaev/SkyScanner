@@ -1,13 +1,14 @@
 import { useEffect } from "react"
 import { connect } from "react-redux"
-import { signSuccess } from "../redux/reducers/authReducer"
+import { clearToken, signSuccess } from "../redux/reducers/authReducer"
 import ViewContentControl from "./ViewContentControl"
 
-let InitializeApp = (props) => {
+const InitializeApp = (props) => {
     useEffect(() => {
-        if(!props.isLogin && props.token){
+        if (!props.isLogin && props.token) {
             debugger;
             sessionStorage.clear()
+            props.clearToken();
         }
         if (sessionStorage.getItem("token")) {
             props.isAuthorized(sessionStorage.getItem("token"));
@@ -15,16 +16,12 @@ let InitializeApp = (props) => {
         // return () => { sessionStorage.clear() };
     }, [props.isLogin])
 
-    return (
-        <>
-            <ViewContentControl />
-        </>
-    )
+    return <ViewContentControl />
 }
 
 const mapStateToProps = (state) => ({
     isLogin: state.auth.isLogin,
-    token:state.auth.token
+    token: state.auth.token,
 })
 
-export default connect(mapStateToProps, { isAuthorized: signSuccess })(InitializeApp)
+export default connect(mapStateToProps, { isAuthorized: signSuccess, clearToken: clearToken })(InitializeApp)

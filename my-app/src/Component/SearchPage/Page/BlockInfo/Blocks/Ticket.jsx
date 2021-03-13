@@ -1,15 +1,15 @@
-import style from "./BlockInfo.module.css"
+import style from "./../BlockInfo.module.css"
 
 import moment from 'moment'
 
 
-import { LineSvg } from "../../../common/LineSvg"
+import { LineSvg } from "../../../../common/LineSvg"
 
-import { IconPlaneSvg } from "../../../common/IconPlaneSvg"
-import { ArrowSvg } from "../../../common/ArrowSvg"
+import { IconPlaneSvg } from "../../../../common/IconPlaneSvg"
+import { ArrowSvg } from "../../../../common/ArrowSvg"
 import { Like } from "./Like"
 
-let Ticket = (props) => {
+const Ticket = (props) => {
 
     let handleLike = () => {
         props.onLike(props.ticket,!props.isLike)

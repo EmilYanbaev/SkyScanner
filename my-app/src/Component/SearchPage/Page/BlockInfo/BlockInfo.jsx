@@ -1,17 +1,23 @@
 import { deepEqual } from "../../../../utils/deepEqual"
 import { CalendarSvg } from "../../../common/CalendarSvg"
-import Basket from "./Basket"
+
+
 import style from "./BlockInfo.module.css"
-import Slaider from "./Slaider"
-
-import Ticket from "./Ticket"
 
 
-let BlockInfo = (props) => {
+import Ticket from "./Blocks/Ticket"
+import Basket from "./Blocks/Basket"
+import Slaider from "./Blocks/Slaider"
+
+import { Preloader } from "../../../common/Preloader"
+
+
+
+const BlockInfo = (props) => {
     let ticketJSX = props.tickets.map(
         (el, index) => {
 
-            let isLike = props.ticketsLike.some(t => deepEqual(el,t))
+            let isLike = props.ticketsLike.some(t => deepEqual(el, t))
             return <Ticket ticket={el} originName={props.departureData.origin.name} destinationName={props.departureData.destination.name} onLike={props.onLike} isLike={isLike} key={index} />
         })
 
@@ -22,17 +28,23 @@ let BlockInfo = (props) => {
                 <DepartureInfo departureData={props.departureData} />
                 <Slaider />
             </div>
+
             <Basket count={props.basketCount} />
+
+            {props.viewPrelodaer && <Preloader />}
+
             <div className={style.tickets}>
-                {props.viewTickets && ticketJSX }
-                {/* {props.viewTickets && <button style = {style.tickets__btnGetTickets}>Get tickets</button>} */}
+                {props.viewTickets && ticketJSX}
             </div>
-            
+
+            <div className = {style.infoBlock_btnWrapp}>
+            {props.viewTickets && <button className = {style.infoBlock__btn} onClick = {props.getTickets}>Eще билеты</button>}
+            </div>
         </div>
     )
 }
 
-let DepartureInfo = (props) => {
+const DepartureInfo = (props) => {
     return (
 
         <div className={style.departure}>

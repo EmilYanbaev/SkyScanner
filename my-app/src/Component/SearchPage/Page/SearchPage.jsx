@@ -4,7 +4,7 @@ import BlockInfoContainer from './BlockInfo/BlockInfoContainer'
 import BlockSearch from './BlockSearch/BlockSearch'
 import style from './SearchPage.module.css'
 
-let SearchPage = (props) => {
+const SearchPage = (props) => {
     return (
         <div className={style.page}>
             <div className={style.logOut}>

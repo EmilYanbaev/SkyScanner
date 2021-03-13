@@ -1,7 +1,7 @@
-import style from "./BlockInfo.module.css"
-import { declOfNum } from '../../../../utils/declOfNum'
+import style from "./../BlockInfo.module.css"
+import { declOfNum } from '../../../../../utils/declOfNum'
 
-let Basket = (props) => {
+const Basket = (props) => {
     let declWord = declOfNum(props.count, ["рейс", "рейса", "рейсов"])
     return (
         <div className={style.basket}>

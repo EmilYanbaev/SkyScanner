@@ -70,9 +70,13 @@
     background: none;
     border:none;
     outline: none;
+
+    opacity: 0.75;
+    transition: all 0.1s linear;
 }
 
 .miniTicket__btn:hover{
+    opacity: 1;
     text-decoration: underline;
 }
 

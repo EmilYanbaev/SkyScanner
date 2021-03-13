@@ -1,6 +1,6 @@
-import style from "./BlockInfo.module.css"
-import { Heart } from "../../../common/Heart"
-import { useState } from 'react'
+import style from "./../BlockInfo.module.css"
+import { Heart } from "../../../../common/Heart"
+// import { useState } from 'react'
 
 export const Like = (props)=>{
     // const [fill,setfill] = useState(props.isLike)

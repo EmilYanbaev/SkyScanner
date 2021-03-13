@@ -1,7 +1,7 @@
 import style from "./Modal.module.css"
 import ModalPortal from "../../common/ModalPortal"
 
-let ModalContainer = (props) => {
+const ModalContainer = (props) => {
     const modal = props.view ? <ModalBlock closeModal={props.closeModal} /> : null;
 
     return (<>{modal}</>)
@@ -10,7 +10,7 @@ let ModalContainer = (props) => {
 export default ModalContainer
 
 
-let ModalBlock = ({ closeModal }) => {
+const ModalBlock = ({ closeModal }) => {
     return (
         <ModalPortal>
             <div className={style.modal}>
@@ -18,7 +18,7 @@ let ModalBlock = ({ closeModal }) => {
                     <h2 className={style.modal__title}>Кратко о проекте</h2>
                     <div className = {style.modal__items}>
                         <div className={style.modal__item}>
-                            0. Никакого хардкода
+                            0. Изначально было небольшое тестовое задание. Которое переросло в SPA приложение
                         </div>
 
                         <div className={style.modal__item}>1.Были использованы:

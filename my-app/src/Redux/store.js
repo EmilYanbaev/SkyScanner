@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, createStore,compose } from "redux"
 import { reducer as formReducer } from 'redux-form'
 import createSagaMiddleWare from "redux-saga"
 import authReducer from "./reducers/authReducer";
+import preloaderReducer from "./reducers/preloaderReducer";
 import searchReducer from "./reducers/searchReducer";
 import ticketsReducer from "./reducers/ticketsReducer";
 import {sagaWatcher } from "./sagas";
@@ -13,6 +14,7 @@ const reducers = combineReducers(
         auth: authReducer,
         search:searchReducer,
         tickets:ticketsReducer,
+        preloaders:preloaderReducer,
         form: formReducer
     }
 )

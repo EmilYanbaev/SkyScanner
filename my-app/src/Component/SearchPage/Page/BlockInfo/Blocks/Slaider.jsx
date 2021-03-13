@@ -1,15 +1,15 @@
 import React from 'react';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide} from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
 import style from "./Slaider.module.css"
 
-import img1 from "../../../../assets/ImgsSlaider/1.png"
-import img2 from "../../../../assets/ImgsSlaider/2.png"
-import img3 from "../../../../assets/ImgsSlaider/3.png"
-import img4 from "../../../../assets/ImgsSlaider/4.png"
+import img1 from "../../../../../assets/ImgsSlaider/1.png"
+import img2 from "../../../../../assets/ImgsSlaider/2.png"
+import img3 from "../../../../../assets/ImgsSlaider/3.png"
+import img4 from "../../../../../assets/ImgsSlaider/4.png"
 
-let Slaider = (props) => {
+const Slaider = (props) => {
 
     //Понимаю, что в какой-то степени хардкод, но если этот коммит висит здесь,
     //Значит я не успел разобраться с зацикливанием слайдов в либе

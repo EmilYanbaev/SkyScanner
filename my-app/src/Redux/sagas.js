@@ -6,13 +6,13 @@ import {takeEvery } from "redux-saga/effects"
 
 import { sagaAuthWorker } from "./sagaWorkers/authWorker"
 import { autoComplitWorker } from "./sagaWorkers/autoComplitWorker"
-import {searchWorker} from "./sagaWorkers/searchWorker"
+import { searchTicketsWorker} from "./sagaWorkers/searchTicketsWorker"
 
 
 export function* sagaWatcher() {
     yield takeEvery(SIGN_IN, sagaAuthWorker)
     yield takeEvery(UPDATE_INPUT,autoComplitWorker)
-    yield takeEvery(BEGINING_SEARCH,searchWorker)
+    yield takeEvery(BEGINING_SEARCH,searchTicketsWorker)
 }
 
 

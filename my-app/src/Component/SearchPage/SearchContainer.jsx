@@ -1,9 +1,8 @@
-import { useEffect } from "react"
 import { connect } from "react-redux"
 import { logOut } from "../../redux/reducers/authReducer"
 import SearchPage from "./Page/SearchPage"
 
-let SearchContainer = (props) => {
+const SearchContainer = (props) => {
     let handleLogOut = ()=>{
         props.logOut()
     }

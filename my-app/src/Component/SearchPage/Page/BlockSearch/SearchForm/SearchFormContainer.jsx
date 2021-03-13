@@ -2,8 +2,7 @@ import React, { useState } from "react"
 import style from "./SearchForm.module.css"
 import Button from "../../../../common/Button"
 import { connect } from "react-redux"
-import { clearInput, setHiddenHelp, setMonth, updateInputValue } from "../../../../../redux/reducers/searchReducer"
-import { beginingSearch } from "../../../../../redux/reducers/common/commonAction"
+import { setHiddenHelp, setMonth, updateInputValue } from "../../../../../redux/reducers/searchReducer"
 import { dataMonth } from "../../../../../utils/dataMonth"
 class SearchFormContainer extends React.Component {
     constructor(props) {
@@ -25,7 +24,9 @@ class SearchFormContainer extends React.Component {
     }
 
     onSearch() {
-        this.props.handleSearch({ origin: this.props.originInput, destination: this.props.destinationInput, month: this.props.month })
+        //приходится создавать таким образом обьект чтобы сагаворкер была универстальная
+        //иначе конфликтует с другим поиском
+        this.props.handleSearch({ origin: { name: this.props.originInput }, destination: { name: this.props.destinationInput }, month: this.props.month })
     }
     render() {
         return <SearchForm
@@ -47,7 +48,7 @@ class SearchFormContainer extends React.Component {
     }
 }
 
-let SearchForm = (props) => {
+const SearchForm = (props) => {
     return (
         <form className={style.form}>
             <div className={style.wrapp}>
@@ -75,10 +76,10 @@ let SearchForm = (props) => {
 }
 
 
-let FormItem = (props) => {
+const FormItem = (props) => {
 
     let onChangeData = (event) => {
-        if (event.target.localName == "input") {
+        if (event.target.localName === "input") {
             props.setHiddenHelp(props.id, false);
             props.updateInput(event.target.value, props.id)
         }
@@ -113,7 +114,7 @@ const FormCalendar = (props) => {
     let monthsJSX = months.map((el, index) => <button className={style.calendar__item} onClick={handleClick} id={el.number} key={index} type="button">{el.name}</button>)
     return (
         <div className={style.calendar}>
-            <p className={style.calendar__title}>Месяц:{months[props.month-1].name}</p>
+            <p className={style.calendar__title}>Месяц:{months[props.month - 1].name}</p>
             <div className={style.calendarWrapp}>
                 {monthsJSX}
             </div>
